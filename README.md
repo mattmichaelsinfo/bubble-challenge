@@ -1,3 +1,4 @@
+
 # Design challenge: 12/25/2017.
 1. Start / Pause / Resume button
 2. Dots appear every 1 second
@@ -7,6 +8,8 @@
 5. Dot size randomizes between 10px - 100px
 6. Dot value = inverse of size (10px = 10pts, 100px = 1pt)
 7. Touch dot = disappear & add points to score
+
+## [Demo Link](http://mattmichaels.info/bubble-challenge/)
 
 ## Author
 Matt Michaels

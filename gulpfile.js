@@ -18,7 +18,7 @@ gulp.task('css', function() {
   return gulp.src('css/styles.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(cleanCSS({debug: true}))
-    .pipe(gulp.dest('docs'))
+    .pipe(gulp.dest('build'))
 		.pipe(connect.reload());
 });
 
@@ -26,12 +26,12 @@ gulp.task('js', function () {
   return gulp.src(['./js/jquery-3.2.1.min.js', './js/main.js'])
 	.pipe(concat('bundle.js'))
 	// .pipe(uglify({mangle:true}))
-	.pipe(gulp.dest('docs'))
+	.pipe(gulp.dest('build'))
 	.pipe(connect.reload());
 });
 
 gulp.task('clean', function() {
- 	return gulp.src('docs')
+ 	return gulp.src('build')
  	.pipe(clean());
 });
 
@@ -44,7 +44,7 @@ gulp.task('watch', function() {
 
 gulp.task('html', function(){
 	gulp.src('index.html')
-		.pipe(gulp.dest('docs'))
+		.pipe(gulp.dest('build'))
     .pipe(connect.reload());
 });
 
@@ -56,16 +56,16 @@ gulp.task('images', function(){
       imageMin.optipng({optimizationLevel: 5}),
       imageMin.svgo({plugins: [{removeViewBox: true}]})
     ]))
-		.pipe(gulp.dest('docs/img'))
+		.pipe(gulp.dest('build/img'))
 		.pipe(connect.reload());
 });
 
 gulp.task('serve', function(){
 	connect.server({
-		root:'docs',
+		root:'build',
 		port:'3030',
 		livereload:true,
-		fallback:'docs/index.html'
+		fallback:'build/index.html'
 	})
 });
 
