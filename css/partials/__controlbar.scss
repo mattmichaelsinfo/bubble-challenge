@@ -1,0 +1,113 @@
+
+// Controlbar
+//////////////////////////////////////////
+.controlbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #e8e8e8;
+  @include flexbox();
+  @include flex-flow(row wrap);
+
+  > * {
+    @include flex(1 1 auto);
+    text-align: center;
+    margin: 15px;
+  }
+
+
+  // Start / Pause button
+  //////////////////////////////////////////
+  &__button {
+    font: 9px/1.4 'Press Start 2P', Courier, sans-serif;
+    border: 1px solid #c3c3c3;
+    background: #f8f8f8;
+    border-radius: 2px;
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #a2a2a2;
+    }
+
+    &:before             { content: 'Resume game'; }
+    &.playing:before     { content: 'Pause game'; }
+  }
+
+
+  // Score counter
+  //////////////////////////////////////////
+  &__score {
+    font: 9px/1.4 'Press Start 2P', Courier, sans-serif;
+    @include flex(1 0 100px);
+    border: 3px dashed #000;
+    padding: 5px;
+    font-size: 24px;
+    border-radius: 3px;
+    background: #000000;
+    color: green;
+    font-weight: bold;
+
+    #score {
+      margin:0;
+      padding: 0;
+      @include vertical-align();
+    }
+  }
+
+  // Slider to adjust scale
+  &__speed {
+    @include flexbox();
+    @include flex-flow(row wrap);
+
+    &--slider {
+      -webkit-appearance: none;
+      width: 100%;
+      margin: 6.7px 0;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 15.6px;
+        cursor: pointer;
+        background: #f8f8f8;
+        border-radius: 0px;
+        border: 1px solid #ddd;
+      }
+
+      &::-webkit-slider-thumb {
+        border: 1px solid #c3c3c3;
+        background: #f8f8f8;
+        height: 29px;
+        width: 42px;
+        border-radius: 0px;
+        border-radius: 2px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -6.7px;
+
+        &:hover {
+          background: #fff;
+          border: 1px solid #a2a2a2;
+          cursor: -webkit-grab;
+        }
+      }
+    }
+
+    &--rate {
+      margin: 5px 0 0 0;
+      text-align: center;
+      display: block;
+      width: 100%;
+      font-size: 7px;
+    }
+  }
+}

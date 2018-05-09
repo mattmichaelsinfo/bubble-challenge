@@ -1,0 +1,57 @@
+
+// Canvas for the dots
+//////////////////////////////////////////
+.canvas {
+  height: 100vh;
+  width: 100%;
+  width: calc(100vw - 96px);
+  margin: 100px;
+  position: relative;
+  margin: 0 0 0 96px;
+
+  &:hover {
+    cursor: -webkit-grab;
+  }
+
+  // Individual dots
+  &__dot {
+    @include border-radius(100px);
+    background: rgba(95, 75, 139, .7);
+    border: 3px solid #ffffff;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    cursor: -webkit-grab;
+
+    &:hover {
+      cursor: -webkit-grabbing;
+      animation-play-state: paused !important;
+      z-index: 1;
+      opacity: 1;
+      @include simpleTransition(all 100ms 0ms ease-in-out);
+    }
+
+
+    &:active,
+    &:focus {
+      cursor: -webkit-grab;
+    }
+
+    // Dot falling animation, speed assigned in .js
+    @-webkit-keyframes fall {
+      0%   { top:-1%; opacity:1; }
+      90%  {          opacity: 1; }
+      100% { top:101%; opacity: 1; }
+    }
+
+    // Pausing the animation
+    &.pause {
+      animation-play-state: paused !important;
+
+      &:hover {
+        cursor: crosshair;
+      }
+    }
+  }
+}

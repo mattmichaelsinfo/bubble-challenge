@@ -1,0 +1,9 @@
+// Mixins
+@import "partials/__reset.scss";          // Global reset
+@import "partials/__mixins.scss";         // SASS Mixins
+
+// Globals
+@import "partials/__variables";           // Sitewide variables declaration
+@import "partials/__globals";             // Sitewide styling of core DOM
+@import "partials/__controlbar";          // Control bar
+@import "partials/__canvas";              // Canvas containing all dots
