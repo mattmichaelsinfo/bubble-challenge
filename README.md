@@ -9,7 +9,8 @@
 6. Dot value = inverse of size (10px = 10pts, 100px = 1pt)
 7. Touch dot = disappear & add points to score
 
-## [Demo Link](http://mattmichaels.info/bubble-challenge/)
+## Demo Link
+[Viewable here](http://mattmichaels.info/bubble-challenge/)
 
 ## Author
 Matt Michaels
