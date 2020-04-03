@@ -10,7 +10,7 @@
 7. Touch dot = disappear & add points to score
 
 ## Demo Link
-[Viewable here](http://mattmichaels.info/bubble-challenge/)
+[Viewable here](http://mattmichaels.info/bubble-game/)
 
 ## Author
 Matt Michaels
